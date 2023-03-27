@@ -27,13 +27,9 @@ def displayPython(text):
     return "Python " + text.replace("_", " ")
 
 
-@app.route('/number/<n>', methods=['GET'], strict_slashes=False)
+@app.route('/number/<int:n>', methods=['GET'], strict_slashes=False)
 def nisnumber(n):
-    if type(n) == int:
-        return "n is a number"
-    else:
-        return
-
+        return "{} is a number".format(n)
 
 if __name__ == '__main__':
     app.run(host='0.0.0.0', port=5000)
