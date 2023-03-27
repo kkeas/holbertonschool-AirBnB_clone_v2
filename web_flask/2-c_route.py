@@ -17,7 +17,7 @@ def hbnb():
 
 
 @app.route('/c/<text>', methods=['GET'], strict_slashes=False)
-def displayC():
+def displayC(text):
     return "C " + text.replace("_", " ")
 
 if __name__ == '__main__':
