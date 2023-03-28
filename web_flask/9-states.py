@@ -5,6 +5,7 @@ the storage engine (FileStorage or DBStorage) =>
 from models import storage and storage.all(...)
 """
 from models import storage
+from models.state import State
 from flask import render_template, Flask
 
 app = Flask(__name__)
@@ -38,7 +39,7 @@ def states_id(id):
     Otherwise:
     H1 tag: “Not found!”
     """
-    for state in storage.all("State").values():
+    for state in storage.all(State).values():
         if state.id == id:
             return render_template("9-states.html", state=state)
     return render_template("9-states.html")
