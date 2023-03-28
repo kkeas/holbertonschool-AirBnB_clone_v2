@@ -7,6 +7,7 @@ from models.base_model import BaseModel
 import os
 
 
+@unittest.skipIf(os.getenv("HBNB_ENV") is not None, "Testing DBStorage")
 class TestAmenity(unittest.TestCase):
     """ a class for testing Amenity"""
 

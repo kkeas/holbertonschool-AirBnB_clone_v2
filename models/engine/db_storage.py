@@ -56,6 +56,13 @@ class DBStorage:
             obj_key = "{}.{}".format(type(obj).__name__, obj.id)
             obj_dct[obj_key] = obj
         return obj_dct
+    
+    def hcf(self, cls):
+        metadata = MetaData()
+        metadata.reflect(bind=self.__engine)
+        table = metadata.tables.get(cls.__tablename__)
+        self.__session.execute(table.delete())
+        self.save()
 
     def close(self):
         self.__session.close()
