@@ -70,6 +70,6 @@ class Place(BaseModel, Base):
         number_rooms = 0
         number_bathrooms = 0
         max_guest = 0
-        price_by_night = 0.00
+        price_by_night = 0
         latitude = 0.00
         longitude = 0.00
