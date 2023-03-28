@@ -1,5 +1,3 @@
-
-
 #!/usr/bin/python3
 """
 You must use storage for fetching data from
