@@ -29,6 +29,19 @@ class Place(BaseModel, Base):
         latitude = Column(Float, nullable=True)
         longitude = Column(Float, nullable=True)
 
+    else:
+        city_id = ''
+        user_id = ''
+        name = ''
+        description = ''
+        number_rooms = 0
+        number_bathrooms = 0
+        max_guest = 0
+        price_by_night = 0
+        latitude = 0.00
+        longitude = 0.00
+
+
     if getenv('HBNB_TYPE_STORAGE') != 'db':
         @property
         def reviews(self):
@@ -62,14 +75,3 @@ class Place(BaseModel, Base):
                                  secondary='place_amenity',
                                  back_populates='place_amenities',
                                  viewonly=False)
-    else:
-        city_id = ''
-        user_id = ''
-        name = ''
-        description = ''
-        number_rooms = 0
-        number_bathrooms = 0
-        max_guest = 0
-        price_by_night = 0
-        latitude = 0.00
-        longitude = 0.00
