@@ -1,4 +1,4 @@
-import models
+from models import Amenity, models, Review
 from os import getenv
 from models.base_model import Base, BaseModel
 from sqlalchemy import Column, ForeignKey, String, Integer, Float, Table
