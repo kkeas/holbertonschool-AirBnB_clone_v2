@@ -6,7 +6,7 @@ from flask import Flask, render_template
 app = Flask(__name__)
 
 
-@app.route('/number_template/<n>', methods=['GET'], strict_slashes=False)
+@app.route('/number_template/<int:n>', methods=['GET'], strict_slashes=False)
 def displaytemplate(n):
      return render_template('5-number.html', n=n)
 
