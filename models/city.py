@@ -8,7 +8,7 @@ from os import getenv
 
 class City(BaseModel, Base):
     """City class that creates cities table"""
-    if getenv() == 'HBNB_TYPE_STORAGE':
+    if getenv('HBNB_TYPE_STORAGE') == 'db':
         __tablename__ = "cities"
         state_id = Column(String(60), ForeignKey("states.id"), nullable=False)
         name = Column(String(128), nullable=False)
