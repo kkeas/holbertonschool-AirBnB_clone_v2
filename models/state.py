@@ -10,13 +10,11 @@ from sqlalchemy.orm import relationship
 
 class State(BaseModel, Base):
     """State class that creates states table"""
-    __tablename__ = "states"
-    name = Column(String(128), nullable=False)
-
     if getenv("HBNB_TYPE_STORAGE") == "db":
         cities = relationship("City", backref="state", cascade="all, \
                               delete-orphan")
-
+        __tablename__ = "states"
+        name = Column(String(128), nullable=False)
     else:
         @property
         def cities(self):
